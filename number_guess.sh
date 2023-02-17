@@ -19,7 +19,7 @@ else
   # get games number
   GAMES=$($PSQL "SELECT COUNT(player_id) FROM games WHERE player_id = '$PLAYER_ID'")
   # get guesses number
-  BSET_GUESSES=$($PSQL "SELECT MIN(guessing_number) FROM games")
+  BSET_GUESSES=$($PSQL "SELECT MIN(guessing_number) FROM games WHERE player_id = $PLAYER_ID")
   echo -e "\nWelcome back, $NAME! You have played $GAMES games, and your best game took $BSET_GUESSES guesses."
 fi
 
