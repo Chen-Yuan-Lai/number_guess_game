@@ -177,6 +177,14 @@ ALTER TABLE ONLY public.players
 
 
 --
+-- Name: games games_player_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.games
+    ADD CONSTRAINT games_player_id_fkey FOREIGN KEY (player_id) REFERENCES public.players(player_id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
